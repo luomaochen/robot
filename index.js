@@ -7,3 +7,4 @@ request.post('http://jldl.mkemall.cn/index/homeGoodsList', {}, (error, res, body
   }
   console.log(`statusCode: ${res.statusCode}`)
   console.log(body)
+})

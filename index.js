@@ -1,9 +1,17 @@
-var requestOptions = {
-   method: 'POST',
-   redirect: 'follow'
+var axios = require('axios');
+
+var config = {
+   method: 'post',
+   url: 'http://jldl.mkemall.cn/index/homeGoodsList',
+   headers: { 
+      'User-Agent': 'Apifox/1.0.0 (https://www.apifox.cn)'
+   }
 };
 
-fetch("http://jldl.mkemall.cn/index/homeGoodsList", requestOptions)
-   .then(response => response.text())
-   .then(result => console.log(result))
-   .catch(error => console.log('error', error));
+axios(config)
+.then(function (response) {
+   console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+   console.log(error);
+});
